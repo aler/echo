@@ -24,3 +24,15 @@ executable echo
 
   default-language:    Haskell2010
   default-extensions:  OverloadedStrings
+
+test-suite tests
+  main-is:             Tests.hs
+  ghc-options:         -Wall
+  type:                exitcode-stdio-1.0
+
+  build-depends:       base           == 4.7.*
+                     , hspec          == 2.1.*
+
+  default-language:    Haskell2010
+  default-extensions:  OverloadedStrings
+  
