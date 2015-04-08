@@ -1,2 +1,2 @@
-# Simple websocket echo severver written in Haskell
+# Simple WebSocket echo server written in Haskell
 
