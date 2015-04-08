@@ -3,8 +3,7 @@ ghc: 7.8
 
 env:
   global:
-  - ARTIFACTS_BUCKET="alrme.projects"
-  - ARTIFACTS_AWS_REGION="us-west-2"
+  - ARTIFACTS_BUCKET="965009617902.travisci"
   - secure: SlTfkO55ac4lUIJVvEdyqiTrSvEinTvGdZPHQw0hUyS7xd/Fhy/63m2H14aobonebbNbTFDZhdHiIzSYX7yN8dD3heX0uOqq+yhK1gZa+JRs74yWMJv/Jx3JvfggxCYwswfiw9D+h8U+r6WEkhILwJYF3793BzpG8hjSl7ipmL4=
   - secure: SZ4vx6QImMOUR2qgS2am9R8HBnqmJvIffmlwWX5qC91Mu9UIQVJo4wrtc2GElMUM+PsIJsvt+fUzU4PKCvlaMZdxoQzGdiU31FjtL3E0Bwi6FRMLZQT+GeP4TGf+9VzU2cM9J+b3ULsVyZpDFzbPEG+e+wzK3Nxwpl9M33eypB8=
 
