@@ -3,7 +3,6 @@ version:             0.1.0.0
 
 synopsis:            A simple echo WebSocket server
 homepage:            http://alexrudyk.com
-license-file:        LICENSE
 author:              Alex Rudyk
 maintainer:          alr@me.com
 category:            Web
@@ -15,8 +14,9 @@ executable echo
   main-is:             Main.hs
   ghc-options:         -Wall
 
-  build-depends:       base >= 4.7 && < 4.8,
-                       websockets == 0.9.*
+  build-depends:       base       == 4.7.*
+                     , text       == 1.2.*
+                     , websockets == 0.9.*
 
   default-language:    Haskell2010
   default-extensions:  OverloadedStrings
