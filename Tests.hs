@@ -1,8 +1,10 @@
 module Main where
 
-import System.Exit (exitFailure)
+import Echo
+import Test.Hspec
 
 main :: IO ()
-main = do
-    putStrLn "This test always fails!"
-    exitFailure
+main = hspec $ do
+  describe "echo" $ do
+    it "should add echo prefix" $ do
+      echo "message" `shouldBe` "echo: message"
