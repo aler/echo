@@ -1,16 +1,25 @@
 module Main where
 
 import Control.Monad (forever)
-import qualified Data.Text          as T
-import qualified Network.WebSockets as WS
+import Network.HTTP.Types (status200)
+import qualified Data.Text                      as T
+import qualified Network.WebSockets             as WS
+import qualified Network.Wai                    as Wai
+import qualified Network.Wai.Handler.Warp       as Warp
+import qualified Network.Wai.Handler.WebSockets as WaiWS
 
 main :: IO ()
 main = do
   putStrLn "started echo on port 9160"
-  WS.runServer "0.0.0.0" 9160 $ application
+  Warp.run 9160 $
+    WaiWS.websocketsOr WS.defaultConnectionOptions wsapp backapp
 
-application :: WS.ServerApp
-application pending = WS.acceptRequest pending >>= talk
+wsapp :: WS.ServerApp
+wsapp pending = WS.acceptRequest pending >>= talk
+
+backapp :: Wai.Application
+backapp _ respond = respond $
+  Wai.responseLBS status200 [("Content-Type", "text/plain")] "Hello World"
 
 talk :: WS.Connection -> IO ()
 talk conn = forever $ do
