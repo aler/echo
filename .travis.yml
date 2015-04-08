@@ -1,2 +1,8 @@
 language: haskell
 ghc: 7.8
+
+addons:
+  artifacts:
+    debug: true
+    paths:
+    - ./dist/build/echo/echo
