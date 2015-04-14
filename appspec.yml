@@ -1,5 +1,5 @@
 version: 0.0
 os: linux
 files:
-  - source: ./echo
+  - source: ./dist/build/echo/echo
     destination: /home/ubuntu
