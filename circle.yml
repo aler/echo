@@ -7,16 +7,16 @@ general:
     - "dist/build/echo/echo"
     - "appspec.yml"
 
-# deployment:
-#   production:
-#     branch: master
-#     codedeploy:
-#       echo:
-#         application_root: /dist/build/echo
-#         revision_location:
-#           revision_type: S3
-#           s3_location:
-#             bucket: 965009617902.projects
-#             key_pattern: echo/echo-{BUILD_NUM}-{SHORT_COMMIT}
-#         region: us-west-2
-#         deployment_group: echo-prod
+deployment:
+  production:
+    branch: master
+    codedeploy:
+      echo:
+        application_root: $CIRCLE_ARTIFACTS
+        revision_location:
+          revision_type: S3
+          s3_location:
+            bucket: 965009617902.projects
+            key_pattern: echo/echo-{BUILD_NUM}-{SHORT_COMMIT}
+        region: us-west-2
+        deployment_group: echo-prod
