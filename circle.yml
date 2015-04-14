@@ -9,9 +9,7 @@ general:
 
 test:
   post:
-    - mkdir deploy
     - cp dist/build/echo/echo ./deploy
-    - cp appspec.yml ./deploy
 
 deployment:
   production:
