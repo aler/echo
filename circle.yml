@@ -8,11 +8,15 @@ general:
     - "appspec.yml"
 
 deployment:
+  pre:
+    - mkdir deploy
+    - cp dist/build/echo/echo ./deploy
+    - cp appspec.yml ./deploy
   production:
     branch: master
     codedeploy:
       echo:
-        application_root: /
+        application_root: /deploy
         revision_location:
           revision_type: S3
           s3_location:
