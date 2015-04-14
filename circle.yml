@@ -5,6 +5,7 @@ machine:
 general:
   artifacts:
     - "dist/build/echo/echo"
+    - "appspec.yml"
 
 # deployment:
 #   production:
