@@ -7,11 +7,13 @@ general:
     - "dist/build/echo/echo"
     - "appspec.yml"
 
-deployment:
-  pre:
+test:
+  post:
     - mkdir deploy
     - cp dist/build/echo/echo ./deploy
     - cp appspec.yml ./deploy
+
+deployment:
   production:
     branch: master
     codedeploy:
